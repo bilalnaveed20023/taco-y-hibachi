@@ -15,7 +15,7 @@ Stop the dev server before running `build`. Even with `PAGES=1` writing to `.nex
 
 - `src/lib/content.ts`: every fact, menu item, review (see PLACEHOLDERS.md)
 - `src/components/*`: one file per section; `art.tsx` holds the hand-built SVG awning, taco, lime
-- `public/img`: truck cutout, logo, chef mark, OG image (provenance in PLACEHOLDERS.md)
+- `public/img`: logo, chef mark, OG image (provenance in PLACEHOLDERS.md)
 - `src/app/globals.css`: tokens, type, all section styles; mobile-first with breakpoints at 720 and 1040
 
 ## Re-skinning for another restaurant

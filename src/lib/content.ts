@@ -72,6 +72,7 @@ export const menu: MenuSection[] = [
     no: "02",
     title: "Tacos",
     kicker: "One hand, no fork",
+    badge: "$3",
     items: [
       { name: "Steak / Asada", note: "The one people drive in from Clinton Township for." },
       { name: "Chicken / Pollo" },
@@ -79,7 +80,7 @@ export const menu: MenuSection[] = [
       { name: "Marinated Pork / Al Pastor" },
       { name: "Pescado", note: "Fish tacos. Look for the sign in the window." },
     ],
-    extras: [{ label: "Flour tortilla or shrimp", price: "$3.50" }],
+    extras: [{ label: "Flour or shrimp, each", price: "$3.50" }],
   },
   {
     no: "03",

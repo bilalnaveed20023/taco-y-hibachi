@@ -7,7 +7,7 @@ export default function FindUs() {
     <section className="find" id="find">
       <div className="wrap find-grid">
         <Reveal className="find-copy">
-          <p className="mono eyebrow">Find the truck</p>
+          <p className="mono eyebrow">Ven a vernos · find the truck</p>
           <h2 className="stencil h2">
             {site.street}
           </h2>

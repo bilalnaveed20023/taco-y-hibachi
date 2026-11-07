@@ -6,7 +6,7 @@ export default function Menu() {
     <section className="menu" id="menu">
       <div className="wrap">
         <Reveal>
-          <p className="mono eyebrow on-red">What’s on the flat-top</p>
+          <p className="mono eyebrow on-red">El menú · what’s on the flat-top</p>
           <h2 className="stencil h2 on-red">The window menu</h2>
         </Reveal>
 

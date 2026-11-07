@@ -1,13 +1,10 @@
-import { site, links, asset } from "@/lib/content";
+import { site, links } from "@/lib/content";
 
 export default function Footer() {
   return (
     <footer className="foot">
       <div className="wrap foot-grid">
-        <div className="foot-logo">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={asset("/img/logo.webp")} width={900} height={1079} alt="Taco Y Hibachi logo: a grill chef with a carving fork, established 2025" loading="lazy" />
-        </div>
+        <p className="stencil foot-mark" aria-hidden="true">Taco<br />Y Hibachi</p>
         <div className="foot-cols">
           <div>
             <p className="mono foot-label">Find us</p>

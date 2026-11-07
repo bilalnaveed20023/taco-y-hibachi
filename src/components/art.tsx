@@ -3,21 +3,80 @@
 const INK = "#1d1713";
 
 export function Awning() {
+  // green / white / red, the flag, as a scalloped awning
   return (
     <svg className="awning" aria-hidden="true" width="100%" height="54" preserveAspectRatio="none">
       <defs>
-        <pattern id="awn" width="64" height="54" patternUnits="userSpaceOnUse">
-          <path d="M0 0H32V30A16 16 0 0 1 0 30Z" fill="#d1361f" />
+        <pattern id="awn" width="96" height="54" patternUnits="userSpaceOnUse">
+          <path d="M0 0H32V30A16 16 0 0 1 0 30Z" fill="#0d6a3a" />
           <path d="M32 0H64V30A16 16 0 0 1 32 30Z" fill="#f4ead5" />
-          <path d="M0 0H32V8H0Z" fill="#000" opacity=".12" />
-          <path d="M32 0H64V8H32Z" fill="#000" opacity=".08" />
+          <path d="M64 0H96V30A16 16 0 0 1 64 30Z" fill="#d1361f" />
+          <path d="M0 0H96V8H0Z" fill="#000" opacity=".12" />
         </pattern>
-        <pattern id="awn-shadow" width="64" height="54" patternUnits="userSpaceOnUse">
-          <path d="M0 0H64V36A16 16 0 0 1 32 36A16 16 0 0 1 0 36Z" fill="#000" />
+        <pattern id="awn-shadow" width="96" height="54" patternUnits="userSpaceOnUse">
+          <path d="M0 0H96V36A16 16 0 0 1 64 36A16 16 0 0 1 32 36A16 16 0 0 1 0 36Z" fill="#000" />
         </pattern>
       </defs>
       <rect width="100%" height="54" fill="url(#awn-shadow)" opacity=".35" transform="translate(0 6)" />
       <rect width="100%" height="54" fill="url(#awn)" />
+    </svg>
+  );
+}
+
+// Cut-paper bunting. Holes are real holes, so the page colour shows through.
+const FLAG_COLORS = ["#d1361f", "#f4ead5", "#0d6a3a", "#f3b82d", "#d6336c", "#1aa7a1"];
+const FLAG_PATH =
+  "M0 0H56V50L49 62L42 50L35 62L28 50L21 62L14 50L7 62L0 50Z" +
+  "M28 15L37 26L28 37L19 26Z" +
+  "M9 14a3 3 0 1 0 6 0a3 3 0 1 0 -6 0Z M41 14a3 3 0 1 0 6 0a3 3 0 1 0 -6 0Z" +
+  "M9 38a3 3 0 1 0 6 0a3 3 0 1 0 -6 0Z M41 38a3 3 0 1 0 6 0a3 3 0 1 0 -6 0Z" +
+  "M26 44a2 2 0 1 0 4 0a2 2 0 1 0 -4 0Z M12 8a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0Z M40.8 8a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0Z";
+
+export function PapelPicado() {
+  return (
+    <div className="picado" aria-hidden="true">
+      {Array.from({ length: 26 }, (_, i) => (
+        <svg key={i} className="flag" viewBox="0 0 56 64" style={{ animationDelay: `${-((i * 7) % 11) * 0.45}s` }}>
+          <path d={FLAG_PATH} fill={FLAG_COLORS[i % FLAG_COLORS.length]} fillRule="evenodd" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
+// Talavera-style tile border
+export function TileBand() {
+  const B = "#1f4e9c";
+  return (
+    <svg className="tiles" aria-hidden="true" width="100%" height="44">
+      <defs>
+        <pattern id="tile" width="44" height="44" patternUnits="userSpaceOnUse">
+          <rect width="44" height="44" fill="#f4ead5" />
+          <rect x=".75" y=".75" width="42.5" height="42.5" fill="none" stroke={B} strokeWidth="1.5" />
+          <g fill={B}>
+            <path d="M0 0H11A11 11 0 0 1 0 11Z" />
+            <path d="M44 0V11A11 11 0 0 1 33 0Z" />
+            <path d="M0 44V33A11 11 0 0 1 11 44Z" />
+            <path d="M44 44H33A11 11 0 0 1 44 33Z" />
+          </g>
+          <g transform="translate(22 22)">
+            <g fill={B}>
+              <ellipse rx="3.6" ry="8.5" cy="-8.5" />
+              <ellipse rx="3.6" ry="8.5" cy="-8.5" transform="rotate(90)" />
+              <ellipse rx="3.6" ry="8.5" cy="-8.5" transform="rotate(180)" />
+              <ellipse rx="3.6" ry="8.5" cy="-8.5" transform="rotate(270)" />
+            </g>
+            <g fill="#d1361f">
+              <ellipse rx="2.3" ry="5.5" cy="-6" transform="rotate(45)" />
+              <ellipse rx="2.3" ry="5.5" cy="-6" transform="rotate(135)" />
+              <ellipse rx="2.3" ry="5.5" cy="-6" transform="rotate(225)" />
+              <ellipse rx="2.3" ry="5.5" cy="-6" transform="rotate(315)" />
+            </g>
+            <circle r="3.6" fill="#f3b82d" stroke="#1d1713" strokeWidth="1.2" />
+          </g>
+        </pattern>
+      </defs>
+      <rect width="100%" height="44" fill="url(#tile)" />
     </svg>
   );
 }

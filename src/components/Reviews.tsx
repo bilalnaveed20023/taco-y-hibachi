@@ -8,7 +8,7 @@ export default function Reviews() {
       <div className="wrap">
         <Reveal className="reviews-head">
           <div>
-            <p className="mono eyebrow on-green">Straight from Google</p>
+            <p className="mono eyebrow on-green">Lo dice la gente · straight from Google</p>
             <h2 className="stencil h2 on-green">Don’t take<br />our word.</h2>
           </div>
           <div className="score">
